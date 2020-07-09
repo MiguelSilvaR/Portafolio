@@ -1,0 +1,43 @@
+<section class="trabajos" id="trabajos">
+    <div class="contenedor">
+        <h3 class="titulo">Trabajos</h3>
+        <div class="container" *ngFor="let proyecto of proyectos; let i = index">
+            <div class="row fila" *ngIf="i%2 == 0;else right">
+                <div class="col-5">
+                    <img [src]="proyecto.mediaURL" alt="" class="img-fluid" *ngIf="!proyecto.media">
+                    <div class="embed-responsive embed-responsive-16by9" *ngIf="proyecto.media">
+                        <!-- <video [src]="proyecto.mediaURL" class="embed-responsive-item" controls></video> -->
+                        <iframe width="560" height="315" class="embed-responsive-item"
+                            [src]="getURL(proyecto)" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-7">
+                    <h2 class="titulo">{{proyecto.nombre}} <small>({{proyecto.year}})</small></h2>
+                    <p class="p-3">{{proyecto.descripcion}}</p>
+                </div>
+            </div>
+            <hr *ngIf="i%2 == 0">
+            <ng-template #right>
+                <div class="row fila">
+                    <div class="col-7">
+                        <h2 class="titulo">{{proyecto.nombre}} <small>({{proyecto.year}})</small></h2>
+                        <p class="p-3">{{proyecto.descripcion}}</p>
+                    </div>
+                    <div class="col-5">
+                        <img [src]="proyecto.mediaURL" alt="" class="img-fluid" *ngIf="!proyecto.media">
+                        <div class="embed-responsive embed-responsive-16by9" *ngIf="proyecto.media">
+                            <!-- <video src="assets/img/6.mp4" class="embed-responsive-item" controls></video> -->
+                            <iframe width="560" height="315" class="embed-responsive-item"
+                                [src]="getURL(proyecto)" frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </ng-template>
+        </div>
+    </div>
+</section>

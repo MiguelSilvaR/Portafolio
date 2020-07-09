@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Estilos de un template elaborado anteriormente por Miguel Silva 2018 */
+@import "assets/css/estilos.css";
+@import "assets/css/font-awesome.css";
+@import "assets/css/font-awesome.min.css";
+@import "assets/css/normalize.css";
+
+/* Mis estilos en angular */
+footer .copy {
+    background: #1e2b38;
+	padding: 60px 0;
+	display: flex;
+	justify-content:center;
+}
+
+.fila {
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
